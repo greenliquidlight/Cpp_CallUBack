@@ -6,19 +6,25 @@
 
 using namespace std;
 
+#ifdef _WIN32
+#define DLL_EXPORT __declspec(dllexport)
+#else
+#define DLL_EXPORT
+#endif
+
 class Cpp_Callback
 {
     public:
         Cpp_Callback();
         ~Cpp_Callback();
-        void registerCallback(std::function<void(int)> callback);
-        void runCallback(int value);
+        DLL_EXPORT void registerCallback(std::function<void(int)> callback);
+        DLL_EXPORT void runCallback(int value);
         
-        void printNumberInDec(int number, string& buffer);
-        void printNumberInHex(int number, string& buffer);
+        DLL_EXPORT void printNumberInDec(int number, string& buffer);
+        DLL_EXPORT void printNumberInHex(int number, string& buffer);
 
     private:
-        std::function<void(int)> callbackFunction;
+        DLL_EXPORT std::function<void(int)> callbackFunction;
 
 };
 
