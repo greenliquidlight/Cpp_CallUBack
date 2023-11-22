@@ -24,7 +24,7 @@ class Cpp_Callback
         DLL_EXPORT void printNumberInHex(int number, string& buffer);
 
     private:
-        DLL_EXPORT std::function<void(int)> callbackFunction;
+        std::function<void(int)> callbackFunction;
 
 };
 
