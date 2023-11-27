@@ -11,7 +11,11 @@ add_library(Cpp_Callback SHARED)
 target_include_directories(Cpp_Callback PUBLIC include)
 
 # add the sources to the library
-target_sources(Cpp_Callback PUBLIC src/Cpp_Callback.cpp)
+target_sources(Cpp_Callback 
+    PUBLIC 
+        src/Cpp_CallbackPrintHex.cpp 
+        src/Cpp_CallbackPrintDec.cpp
+        src/Cpp_CallbackUser.cpp)
 
 # Add the tests
 include(CTest)
