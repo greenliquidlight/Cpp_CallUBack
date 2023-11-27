@@ -3,6 +3,7 @@
 
 #include <Cpp_CallbackInterface.h>
 
+
 namespace CallbackLibrary
 {
     /// <summary> 
@@ -15,20 +16,20 @@ namespace CallbackLibrary
             /// Constructor
             /// </summary>
             /// <param name="callback">Callback function to be registered</param>
-            __declspec(dllexport) Cpp_CallbackUser(CppCallbackInterface* callback);
+            DLL_EXPORT Cpp_CallbackUser(CppCallbackInterface* callback);
             
             /// <summary>
             /// Method to register a callback function
             /// </summary>
             /// <param name="callback">Callback function to be registered</param>
-            __declspec(dllexport) void registerCallback(CppCallbackInterface* callback);
+            DLL_EXPORT void registerCallback(CppCallbackInterface* callback);
 
             /// <summary>
             /// Method to invoke the callback function
             /// </summary>
             /// <param name="number">Number to be printed</param>
             /// <param name="buffer">Buffer store output string</param>
-            __declspec(dllexport) void invokeCallback(int number, std::string& buffer);
+            DLL_EXPORT void invokeCallback(int number, std::string& buffer);
 
         private:
             /// <summary>

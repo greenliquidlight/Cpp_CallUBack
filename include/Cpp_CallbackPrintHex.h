@@ -17,7 +17,7 @@ namespace CallbackLibrary
             /// </summary>
             /// <param name="number">Number to be printed</param>
             /// <param name="buffer">Buffer for return string</param>
-            __declspec(dllexport) void callbackFunction(int number, std::string& buffer) override;
+            DLL_EXPORT void callbackFunction(int number, std::string& buffer) override;
     };
 }
 #endif // CPP_CALLBACKPRINTHEX_H
